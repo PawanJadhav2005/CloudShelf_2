@@ -29,6 +29,13 @@ public class LogInActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         loginButton.setOnClickListener(v -> loginUser());
+        signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LogInActivity.this, SignInActivity.class));
+            }
+        });
+
     }
 
     void loginUser() {
@@ -42,12 +49,6 @@ public class LogInActivity extends AppCompatActivity {
                 })
                 .addOnFailureListener(e -> Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show());
 
-        signin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LogInActivity.this, SignInActivity.class));
-            }
-        });
 
     }
 }
