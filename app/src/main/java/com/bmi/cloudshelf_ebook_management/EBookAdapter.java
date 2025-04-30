@@ -13,9 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class EBookAdapter extends RecyclerView.Adapter<EBookAdapter.EbookViewHolder> {
+
     private List<EBook> list;
 
-    public EBookAdapter(List<EBook> list) { this.list = list; }
+    public EBookAdapter(List<EBook> list) {
+        this.list = list;
+    }
 
     @NonNull
     @Override
@@ -23,8 +26,6 @@ public class EBookAdapter extends RecyclerView.Adapter<EBookAdapter.EbookViewHol
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_ebook, parent, false);
         return new EbookViewHolder(view);
     }
-
-
 
     @Override
     public void onBindViewHolder(@NonNull EbookViewHolder holder, int position) {
@@ -37,7 +38,6 @@ public class EBookAdapter extends RecyclerView.Adapter<EBookAdapter.EbookViewHol
             v.getContext().startActivity(intent);
         });
     }
-
 
     @Override
     public int getItemCount() {

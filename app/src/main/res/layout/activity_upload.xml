@@ -12,25 +12,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
         <TextView
+            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Upload your eBook"
-            android:textSize="35dp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="70dp"/>
+            android:textColor="@android:color/white"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="16dp"/>
 
+        <!-- Selected PDF File Name (optional if you want to show) -->
+        <TextView
+            android:id="@+id/selectedPdfName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No file selected"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- CardView for PDF Placeholder -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="6dp"
-            >
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/pdfPreview"
@@ -43,28 +56,30 @@
                 android:background="#EDEDED" />
         </androidx.cardview.widget.CardView>
 
+        <!-- Choose PDF Button -->
         <Button
             android:id="@+id/chooseFile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Choose PDF File"
-            android:backgroundTint="#A5B0B8"
+            android:backgroundTint="#59705A"
             android:textColor="#FFFFFF"
             android:drawableLeft="@drawable/ic_file_upload"
             android:drawablePadding="8dp"
             android:padding="12dp"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="16dp"/>
 
+        <!-- Upload PDF Button -->
         <Button
             android:id="@+id/uploadFile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Upload to Cloud"
-            android:backgroundTint="#A5B0B8"
+            android:backgroundTint="#59705A"
             android:textColor="#FFFFFF"
             android:drawableLeft="@drawable/ic_cloud_upload"
             android:drawablePadding="8dp"
-            android:padding="12dp" />
+            android:padding="12dp"/>
 
     </LinearLayout>
 </ScrollView>
